@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 778
-  ClientWidth = 889
+  ClientHeight = 603
+  ClientWidth = 875
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -54,8 +54,8 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object Memo2: TMemo
-    Left = 16
-    Top = 328
+    Left = 8
+    Top = 296
     Width = 857
     Height = 89
     Lines.Strings = (
@@ -77,8 +77,8 @@ object Form1: TForm1
     TabOrder = 3
   end
   object Button2: TButton
-    Left = 798
-    Top = 432
+    Left = 790
+    Top = 400
     Width = 75
     Height = 25
     Caption = 'Button2'
@@ -86,8 +86,8 @@ object Form1: TForm1
     OnClick = Button2Click
   end
   object DBGrid2: TDBGrid
-    Left = 16
-    Top = 472
+    Left = 8
+    Top = 440
     Width = 857
     Height = 153
     TabOrder = 5
@@ -96,30 +96,5 @@ object Form1: TForm1
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-  end
-  object Button3: TButton
-    Left = 798
-    Top = 736
-    Width = 75
-    Height = 25
-    Caption = 'Button3'
-    TabOrder = 6
-  end
-  object Button4: TButton
-    Left = 16
-    Top = 736
-    Width = 75
-    Height = 25
-    Caption = 'Button4'
-    TabOrder = 7
-    OnClick = Button4Click
-  end
-  object Button5: TButton
-    Left = 798
-    Top = 280
-    Width = 75
-    Height = 25
-    Caption = 'Button5'
-    TabOrder = 8
   end
 end

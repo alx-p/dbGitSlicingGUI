@@ -16,12 +16,6 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Button4Click(TObject *Sender)
-{
-  DataModule2->FDConnection1->Connected = true;
-}
-//---------------------------------------------------------------------------
-
 void __fastcall TForm1::Button1Click(TObject *Sender)
 {
   DataModule2->FDQuery1->SQL->Clear();

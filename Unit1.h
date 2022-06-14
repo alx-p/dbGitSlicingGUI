@@ -21,10 +21,6 @@ __published:	// IDE-managed Components
 	TMemo *Memo2;
 	TButton *Button2;
 	TDBGrid *DBGrid2;
-	TButton *Button3;
-	TButton *Button4;
-	TButton *Button5;
-	void __fastcall Button4Click(TObject *Sender);
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
