@@ -24,18 +24,18 @@
 #include <FireDAC.DatS.hpp>
 #include <FireDAC.Stan.Param.hpp>
 //---------------------------------------------------------------------------
-class TDataModule2 : public TDataModule
+class TDM : public TDataModule
 {
 __published:	// IDE-managed Components
-	TFDConnection *FDConnection1;
+	TFDConnection *Connection;
 	TFDQuery *FDQuery1;
 	TDataSource *DataSource1;
 	TFDQuery *FDQuery2;
 private:	// User declarations
 public:		// User declarations
-	__fastcall TDataModule2(TComponent* Owner);
+	__fastcall TDM(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
-extern PACKAGE TDataModule2 *DataModule2;
+extern PACKAGE TDM *DM;
 //---------------------------------------------------------------------------
 #endif

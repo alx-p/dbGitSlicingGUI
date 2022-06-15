@@ -1,8 +1,8 @@
-object Form1: TForm1
+object frmMain: TfrmMain
   Left = 0
   Top = 0
-  Caption = 'Form1'
-  ClientHeight = 603
+  Caption = 'dbGitSlicingGUI v.0.0.1'
+  ClientHeight = 632
   ClientWidth = 875
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -36,7 +36,7 @@ object Form1: TForm1
     Top = 152
     Width = 865
     Height = 113
-    DataSource = DataModule2.DataSource1
+    DataSource = DM.DataSource1
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText

@@ -1,8 +1,8 @@
-object DataModule2: TDataModule2
+object DM: TDM
   OldCreateOrder = False
   Height = 600
   Width = 849
-  object FDConnection1: TFDConnection
+  object Connection: TFDConnection
     Params.Strings = (
       'Server='
       'DriverID=PG')
@@ -10,7 +10,7 @@ object DataModule2: TDataModule2
     Top = 56
   end
   object FDQuery1: TFDQuery
-    Connection = FDConnection1
+    Connection = Connection
     Left = 216
     Top = 64
   end
@@ -20,7 +20,7 @@ object DataModule2: TDataModule2
     Top = 72
   end
   object FDQuery2: TFDQuery
-    Connection = FDConnection1
+    Connection = Connection
     Left = 216
     Top = 128
   end
