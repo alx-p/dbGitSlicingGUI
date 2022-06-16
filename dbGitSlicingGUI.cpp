@@ -5,7 +5,7 @@
 #include <tchar.h>
 //---------------------------------------------------------------------------
 USEFORM("Unit2.cpp", DM); /* TDataModule: File Type */
-USEFORM("Unit1.cpp", frmMain);
+USEFORM("Main.cpp", frmMain);
 //---------------------------------------------------------------------------
 int WINAPI _tWinMain(HINSTANCE, HINSTANCE, LPTSTR, int)
 {

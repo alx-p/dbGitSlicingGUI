@@ -3,7 +3,7 @@
 #include <vcl.h>
 #pragma hdrstop
 
-#include "Unit1.h"
+#include "Main.h"
 #include "Unit2.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -30,7 +30,6 @@ void __fastcall TfrmMain::FormShow(TObject *Sender)
 	DM->Connection->Params->Add("Password="+Ini->ReadString("Conn1","password",""));
 	DM->Connection->Connected = True;
     Caption = "dbGitSlicingGUI v." + version_num;
-//    MessageDlg('Data Comparer (PostgreSQL)'+#13#10+'Версия '+version_num+#13#10#13#10+'itorbit.ru'+#13#10+'dev@itorbit.ru'+#13#10#13#10+'2022г. Алексей Потапович', mtInformation, [mbOK], 0);
 }
 //---------------------------------------------------------------------------
 
@@ -64,6 +63,13 @@ void __fastcall TfrmMain::Button2Click(TObject *Sender)
 	String1 = "";
 	DM->FDQuery1->Next();
   }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmMain::N2Click(TObject *Sender)
+{
+  AnsiString msgText = "dbGitSlicingGUI\nВерсия "+version_num+"\n\nitorbit"+(char)(46)+"ru\ndev"+(char)(64)+"itorbit"+(char)(46)+"ru\n\n2022г. Алексей Потапович";
+  MessageDlg(msgText,mtInformation,TMsgDlgButtons()<<mbOK,0);
 }
 //---------------------------------------------------------------------------
 
