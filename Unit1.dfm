@@ -1,15 +1,16 @@
 object frmMain: TfrmMain
   Left = 0
   Top = 0
-  Caption = 'dbGitSlicingGUI v.0.0.1'
-  ClientHeight = 632
-  ClientWidth = 875
+  Caption = 'dbGitSlicingGUI v.0.0.2'
+  ClientHeight = 442
+  ClientWidth = 883
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = MainMenu
   OldCreateOrder = False
   OnShow = FormShow
   PixelsPerInch = 96
@@ -34,8 +35,8 @@ object frmMain: TfrmMain
   object DBGrid1: TDBGrid
     Left = 16
     Top = 152
-    Width = 865
-    Height = 113
+    Width = 857
+    Height = 241
     DataSource = DM.DataSource1
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
@@ -45,56 +46,31 @@ object frmMain: TfrmMain
     TitleFont.Style = []
   end
   object Button1: TButton
-    Left = 798
+    Left = 744
     Top = 121
-    Width = 75
+    Width = 129
     Height = 25
-    Caption = 'Button1'
+    Caption = #1057#1087#1080#1089#1086#1082' '#1092#1091#1085#1082#1094#1080#1081
     TabOrder = 2
     OnClick = Button1Click
   end
-  object Memo2: TMemo
-    Left = 8
-    Top = 296
-    Width = 857
-    Height = 89
-    Lines.Strings = (
-      'select string_agg(t.col1, CHR(10)) func_text from ('
-      'SELECT pg_get_functiondef(f.oid) col1'
-      '  FROM pg_catalog.pg_proc f '
-      ' INNER JOIN pg_catalog.pg_namespace n ON f.pronamespace = n.oid'
-      ' WHERE f.proname = :func_name'
-      '   AND n.nspname = :schema_name'
-      'union'
-      
-        'SELECT '#39'---------- '#1054#1087#1080#1089#1072#1085#1080#1077' '#1092#1091#1085#1082#1094#1080#1080' ----------'#39'||CHR(10)||'#39'/*'#39'||' +
-        'CHR(10)|| ds.description||CHR(10)||'#39'*/'#39' col1'
-      '  FROM pg_proc p '
-      '  LEFT OUTER JOIN pg_description ds ON ds.objoid = p.oid '
-      ' INNER JOIN pg_namespace n ON p.pronamespace = n.oid '
-      ' WHERE p.proname = :func_name'
-      '   AND n.nspname = :schema_name) t;')
-    TabOrder = 3
-  end
   object Button2: TButton
-    Left = 790
-    Top = 400
-    Width = 75
+    Left = 744
+    Top = 408
+    Width = 129
     Height = 25
-    Caption = 'Button2'
-    TabOrder = 4
+    Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1074' '#1092#1072#1081#1083#1099
+    TabOrder = 3
     OnClick = Button2Click
   end
-  object DBGrid2: TDBGrid
-    Left = 8
-    Top = 440
-    Width = 857
-    Height = 153
-    TabOrder = 5
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -11
-    TitleFont.Name = 'Tahoma'
-    TitleFont.Style = []
+  object MainMenu: TMainMenu
+    Left = 560
+    Top = 112
+    object N1: TMenuItem
+      Caption = #1057#1087#1088#1072#1074#1082#1072
+      object N2: TMenuItem
+        Caption = #1054' '#1087#1088#1086#1075#1088#1072#1084#1084#1077'...'
+      end
+    end
   end
 end
