@@ -3,7 +3,7 @@
 
 #pragma hdrstop
 
-#include "Unit2.h"
+#include "DataModule.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma classgroup "Vcl.Controls.TControl"

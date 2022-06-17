@@ -1,7 +1,7 @@
 //---------------------------------------------------------------------------
 
-#ifndef Unit2H
-#define Unit2H
+#ifndef DataModuleH
+#define DataModuleH
 //---------------------------------------------------------------------------
 #include <System.Classes.hpp>
 #include <Data.DB.hpp>

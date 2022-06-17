@@ -11,24 +11,15 @@ object frmMain: TfrmMain
   Font.Style = []
   Menu = MainMenu
   OldCreateOrder = False
+  OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object Memo1: TMemo
-    Left = 16
+    Left = 144
     Top = 16
-    Width = 857
-    Height = 89
-    Lines.Strings = (
-      
-        'select specific_schema::varchar(32) schema_name, routine_name::v' +
-        'archar(64) func_name'
-      '  from information_schema.routines '
-      
-        ' where specific_schema not in ('#39'pg_catalog'#39','#39'information_schema'#39 +
-        ','#39'tech_docum'#39','#39'temp'#39')'
-      '   and routine_type = '#39'FUNCTION'#39
-      ' order by specific_schema, routine_name')
+    Width = 729
+    Height = 97
     TabOrder = 0
   end
   object DBGrid1: TDBGrid
@@ -61,6 +52,34 @@ object frmMain: TfrmMain
     Caption = #1057#1086#1093#1088#1072#1085#1080#1090#1100' '#1074' '#1092#1072#1081#1083#1099
     TabOrder = 3
     OnClick = Button2Click
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 16
+    Top = 8
+    Width = 113
+    Height = 105
+    Caption = 'RadioGroup1'
+    TabOrder = 4
+  end
+  object RadioButton1: TRadioButton
+    Left = 32
+    Top = 32
+    Width = 81
+    Height = 17
+    Caption = #1060#1091#1085#1082#1094#1080#1080
+    Checked = True
+    TabOrder = 5
+    TabStop = True
+    OnClick = RadioButton1Click
+  end
+  object RadioButton2: TRadioButton
+    Left = 32
+    Top = 55
+    Width = 81
+    Height = 17
+    Caption = #1058#1072#1073#1083#1080#1094#1099
+    TabOrder = 6
+    OnClick = RadioButton2Click
   end
   object MainMenu: TMainMenu
     Left = 560
