@@ -29,9 +29,7 @@ void __fastcall TfrmMain::FormShow(TObject *Sender)
 	DM->Connection->Params->Add("User_Name="+Ini->ReadString("Conn1","user_name","postgres"));
 	DM->Connection->Params->Add("Password="+Ini->ReadString("Conn1","password",""));
 	DM->Connection->Connected = True;
-	/////
 	save_path = Ini->ReadString("Common","savepath",Patch);
-	Caption = "dbGitSlicingGUI v." + version_num;
 	delete Ini;
 }
 //---------------------------------------------------------------------------
@@ -121,7 +119,8 @@ void __fastcall TfrmMain::RadioButton2Click(TObject *Sender)
 
 void __fastcall TfrmMain::FormCreate(TObject *Sender)
 {
-  frmMain->Position = poDesktopCenter;
+  Position = poScreenCenter;
+  Caption = "dbGitSlicingGUI v." + version_num;
 }
 //---------------------------------------------------------------------------
 

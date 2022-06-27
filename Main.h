@@ -36,7 +36,7 @@ __published:	// IDE-managed Components
 	void __fastcall RadioButton2Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 private:	// User declarations
-	AnsiString version_num = "0.0.4";
+	AnsiString version_num = "0.0.5";
 	AnsiString save_path = "";
 public:		// User declarations
 	__fastcall TfrmMain(TComponent* Owner);
