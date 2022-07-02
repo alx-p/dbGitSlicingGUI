@@ -27,7 +27,7 @@ object frmMain: TfrmMain
     Top = 152
     Width = 857
     Height = 241
-    DataSource = DM.DataSource1
+    DataSource = DM.dsGetDbObjects
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText

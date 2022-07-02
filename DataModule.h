@@ -28,9 +28,9 @@ class TDM : public TDataModule
 {
 __published:	// IDE-managed Components
 	TFDConnection *Connection;
-	TFDQuery *FDQuery1;
-	TDataSource *DataSource1;
-	TFDQuery *FDQuery2;
+	TFDQuery *qGetDbObjects;
+	TDataSource *dsGetDbObjects;
+	TFDQuery *qGetDDLText;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDM(TComponent* Owner);

@@ -6,22 +6,22 @@ object DM: TDM
     Params.Strings = (
       'Server='
       'DriverID=PG')
-    Left = 88
-    Top = 56
+    Left = 32
+    Top = 24
   end
-  object FDQuery1: TFDQuery
+  object qGetDbObjects: TFDQuery
     Connection = Connection
-    Left = 216
-    Top = 64
+    Left = 104
+    Top = 24
   end
-  object DataSource1: TDataSource
-    DataSet = FDQuery1
-    Left = 288
-    Top = 72
+  object dsGetDbObjects: TDataSource
+    DataSet = qGetDbObjects
+    Left = 168
+    Top = 40
   end
-  object FDQuery2: TFDQuery
+  object qGetDDLText: TFDQuery
     Connection = Connection
-    Left = 216
-    Top = 128
+    Left = 56
+    Top = 88
   end
 end
