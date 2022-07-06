@@ -14,6 +14,8 @@
 #include <Vcl.Menus.hpp>
 #include <Filectrl.hpp>
 #include <Vcl.ExtCtrls.hpp>
+#include <Vcl.Buttons.hpp>
+#include <Vcl.DBCtrls.hpp>
 //---------------------------------------------------------------------------
 class TfrmMain : public TForm
 {
@@ -28,6 +30,10 @@ __published:	// IDE-managed Components
 	TRadioGroup *RadioGroup1;
 	TRadioButton *RadioButton1;
 	TRadioButton *RadioButton2;
+	TDBLookupComboBox *DBLookupComboBox1;
+	TSpeedButton *SpeedButton1;
+	TMenuItem *N3;
+	TLabel *Label1;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
@@ -35,8 +41,9 @@ __published:	// IDE-managed Components
 	void __fastcall RadioButton1Click(TObject *Sender);
 	void __fastcall RadioButton2Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
+	void __fastcall SpeedButton1Click(TObject *Sender);
 private:	// User declarations
-	AnsiString version_num = "0.0.6";
+	AnsiString version_num = "0.0.7";
 	AnsiString save_path = "";
 public:		// User declarations
 	__fastcall TfrmMain(TComponent* Owner);

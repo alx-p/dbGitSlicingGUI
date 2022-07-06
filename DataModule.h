@@ -23,6 +23,10 @@
 #include <FireDAC.DApt.Intf.hpp>
 #include <FireDAC.DatS.hpp>
 #include <FireDAC.Stan.Param.hpp>
+#include <FireDAC.Phys.SQLite.hpp>
+#include <FireDAC.Phys.SQLiteDef.hpp>
+#include <FireDAC.Phys.SQLiteWrapper.Stat.hpp>
+#include <FireDAC.Stan.ExprFuncs.hpp>
 //---------------------------------------------------------------------------
 class TDM : public TDataModule
 {
@@ -31,6 +35,12 @@ __published:	// IDE-managed Components
 	TFDQuery *qGetDbObjects;
 	TDataSource *dsGetDbObjects;
 	TFDQuery *qGetDDLText;
+	TFDConnection *ConnectionOptions;
+	TFDQuery *qGetParam;
+	TStringField *qGetParamvalue;
+	TFDQuery *qAliases;
+	TDataSource *dsAliases;
+	TFDQuery *qConnectParamsPG;
 private:	// User declarations
 public:		// User declarations
 	__fastcall TDM(TComponent* Owner);
