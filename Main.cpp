@@ -36,16 +36,10 @@ void __fastcall TfrmMain::FormShow(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TfrmMain::Button1Click(TObject *Sender)
-{
-  DM->qGetDbObjects->SQL->Clear();
-  DM->qGetDbObjects->SQL->Add(Memo1->Lines->Text);
-  DM->qGetDbObjects->Open();
-}
-//---------------------------------------------------------------------------
 
 void __fastcall TfrmMain::Button2Click(TObject *Sender)
 {
+ // DeleteDir();
   DM->qGetDDLText->SQL->Clear();
 
   AnsiString String1;
@@ -62,6 +56,9 @@ void __fastcall TfrmMain::Button2Click(TObject *Sender)
 	DM->qGetDDLText->SQL->Add("select get_table_ddl(:schema_name, :func_name) ddl_text");
   }
 
+  if (CheckBox1->Checked)
+    TDirectory::Delete(String2, true);
+
   if (!DirectoryExists(String2)){
 	CreateDir(String2);
   }
@@ -77,7 +74,7 @@ void __fastcall TfrmMain::Button2Click(TObject *Sender)
 	if (!DirectoryExists(String2+"/"+DM->qGetDbObjects->FieldByName("schema_name")->AsString)){
 	  CreateDir(String2+"/"+DM->qGetDbObjects->FieldByName("schema_name")->AsString);
 	}
-	l->SaveToFile(String2+"/"+DM->qGetDbObjects->FieldByName("schema_name")->AsString+"/"+DM->qGetDbObjects->FieldByName("obj_name")->AsString+".sql");
+  	l->SaveToFile(String2+"/"+DM->qGetDbObjects->FieldByName("schema_name")->AsString+"/"+DM->qGetDbObjects->FieldByName("obj_name")->AsString+".sql");
 	String1 = "";
 	DM->qGetDbObjects->Next();     //IncludeTrailingPathDelimiter
   }
@@ -101,6 +98,7 @@ void __fastcall TfrmMain::RadioButton1Click(TObject *Sender)
 
 	Memo1->Clear();
 	Memo1->Lines->Add(DM->qGetParam->FieldByName("value")->AsString);
+	aGetDbObjectList->Caption = "Список функций";
   }
 }
 //---------------------------------------------------------------------------
@@ -115,6 +113,7 @@ void __fastcall TfrmMain::RadioButton2Click(TObject *Sender)
 
 	Memo1->Clear();
 	Memo1->Lines->Add(DM->qGetParam->FieldByName("value")->AsString);
+    aGetDbObjectList->Caption = "Список таблиц";
   }
 }
 //---------------------------------------------------------------------------
@@ -146,6 +145,20 @@ void __fastcall TfrmMain::SpeedButton1Click(TObject *Sender)
 	save_path = DM->qConnectParamsPG->FieldByName("save_path")->AsString;
 	Label1->Caption = "Путь: "+save_path;
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmMain::aGetDbObjectListExecute(TObject *Sender)
+{
+  DM->qGetDbObjects->SQL->Clear();
+  DM->qGetDbObjects->SQL->Add(Memo1->Lines->Text);
+  DM->qGetDbObjects->Open();
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TfrmMain::aGetDbObjectListUpdate(TObject *Sender)
+{
+   aGetDbObjectList->Enabled = Trim(Memo1->Lines->Text) != "";
 }
 //---------------------------------------------------------------------------
 

@@ -16,25 +16,33 @@
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Buttons.hpp>
 #include <Vcl.DBCtrls.hpp>
+#include <System.IOUtils.hpp>
+#include <System.Actions.hpp>
+#include <Vcl.ActnList.hpp>
 //---------------------------------------------------------------------------
 class TfrmMain : public TForm
 {
 __published:	// IDE-managed Components
-	TMemo *Memo1;
 	TDBGrid *DBGrid1;
-	TButton *Button1;
-	TButton *Button2;
 	TMainMenu *MainMenu;
 	TMenuItem *N1;
 	TMenuItem *N2;
-	TRadioGroup *RadioGroup1;
+	TMenuItem *N3;
+	TActionList *ActionList1;
+	TAction *aGetDbObjectList;
+	TGroupBox *GroupBox1;
+	TSpeedButton *SpeedButton1;
+	TLabel *Label1;
+	TDBLookupComboBox *DBLookupComboBox1;
+	TPanel *Panel1;
+	TMemo *Memo1;
+	TButton *Button1;
+	TGroupBox *GroupBox2;
 	TRadioButton *RadioButton1;
 	TRadioButton *RadioButton2;
-	TDBLookupComboBox *DBLookupComboBox1;
-	TSpeedButton *SpeedButton1;
-	TMenuItem *N3;
-	TLabel *Label1;
-	void __fastcall Button1Click(TObject *Sender);
+	TPanel *Panel2;
+	TButton *Button2;
+	TCheckBox *CheckBox1;
 	void __fastcall Button2Click(TObject *Sender);
 	void __fastcall FormShow(TObject *Sender);
 	void __fastcall N2Click(TObject *Sender);
@@ -42,8 +50,10 @@ __published:	// IDE-managed Components
 	void __fastcall RadioButton2Click(TObject *Sender);
 	void __fastcall FormCreate(TObject *Sender);
 	void __fastcall SpeedButton1Click(TObject *Sender);
+	void __fastcall aGetDbObjectListExecute(TObject *Sender);
+	void __fastcall aGetDbObjectListUpdate(TObject *Sender);
 private:	// User declarations
-	AnsiString version_num = "0.0.7";
+	AnsiString version_num = "0.0.8";
 	AnsiString save_path = "";
 public:		// User declarations
 	__fastcall TfrmMain(TComponent* Owner);
